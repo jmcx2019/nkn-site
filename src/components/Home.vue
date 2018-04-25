@@ -10,9 +10,11 @@
       <technical-highlights></technical-highlights>
       <road-map></road-map>
       <team></team>
+      <!--<investor></investor>-->
       <news></news>
       <slogan></slogan>
       <the-footer></the-footer>
+      <nav-bottom></nav-bottom>
     </div>
   </div>
 </template>
@@ -25,10 +27,12 @@
   import TechnicalHighlights from './TechnicalHighlights'
   import RoadMap from './RoadMap'
   import Team from './Team'
+  import Investor from './Investor'
   import WhatIsNkn from './WhatIsNkn'
   import News from './News'
   import Slogan from './Slogan'
   import TheFooter from './TheFooter'
+  import NavBottom from './NavBottom'
 
 	export default {
     name: "home",
@@ -41,9 +45,11 @@
       TechnicalHighlights,
       RoadMap,
       Team,
+      Investor,
       News,
       Slogan,
-      TheFooter
+      TheFooter,
+      NavBottom
     }
   }
 </script>

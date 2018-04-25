@@ -80,7 +80,7 @@ module.exports = {
     yanBoLi: {
       name: 'Yanbo Li',
       tit1: 'Founder | Core Developer',
-      tit2: 'Co-Founder of Onchain',
+      tit2: 'Former Co-Founder of Onchain',
       introduction1: 'Open source guru, Linux Kernel network subsystem code contributor.',
       introduction2: 'Founded and led Onchain Beijing office and developed open source blockchain platform DNA ' +
       '(Distributed Network Architecture). ',
@@ -239,6 +239,9 @@ module.exports = {
       introduction12: 'IEEE Richard W. Hamming Medal in 2010.',
     }
   },
+  investor: {
+    name: 'INVESTORS'
+  },
   freeTheBits: {
     first: 'Free the bits, ',
     last: 'rebuild the Internet we always wanted',
@@ -266,6 +269,10 @@ module.exports = {
       content: '联系方式',
       email: 'contact@nkn.org'
     }
+  },
+  navBottom: {
+    gotIt: 'Got it',
+    txt: 'The NKN fundraising has been completed. NKN will not directly or appoint any institutions and individuals to raise funds. Please don\'t be deceived and be aware of scammers.'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }
