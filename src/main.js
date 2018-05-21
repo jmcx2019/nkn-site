@@ -7,12 +7,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueI18n from 'vue-i18n'
 import LangStorage from './helpers/lang'
-import ConfigFile from './../static/config/default-config'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueI18n)
-Vue.use(ConfigFile)
-Vue.prototype.$config = ConfigFile
 
 const i18n = new VueI18n({
   locale: LangStorage.getLang('en'),  // 语言标识

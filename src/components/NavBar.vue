@@ -1,29 +1,52 @@
 <template>
-  <nav class="navbar navbar-default fixed-top">
-    <div class="container-fluid container-fluid-fix">
+  <nav class="navbar" :class="[$route.name === 'Home' ? 'navbar-default' : 'navbar-default-blue']">
+    <div class="container container-fluid-fix">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <img src="./../assets/Contactlogo2x.png" alt="">
+        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/Contactlogo2x.png" @click="goToHome">
+        <img v-if="$route.name !== 'Home'" class="nkn-banner-logo" src="./../assets/white_logo.png" @click="goToHome">
       </div>
       <div class="hidden-xs">
-        <ul class="nav navbar-nav navbar-right">
-          <li><router-link to="/" class="scroll-top" @click="scrollTop">{{ $t('navbar.home') }}</router-link></li>
+        <ul class="nav navbar-nav navbar-right" :class="[$route.name === 'Home' ? 'narbar-main-pages' : 'narbar-child-pages']">
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollOverview">{{ $t('navbar.overview') }}</a></li>
 
-          <li><a class="scroll-bottom" @click="scrollTeam">{{ $t('navbar.team') }}</a></li>
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.documents') }}<span class="caret"></span></a>
+          <li v-if="$route.name === 'Home'" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a target="_blank" :href="urlList.introduction">{{ $t('navbar.introduction') }}</a></li>
+              <li><a v-if="$i18n.locale === 'en'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
+              <li><a v-if="$i18n.locale === 'zh'" target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
               <li><a target="_blank" :href="urlList.whitePaper">{{ $t('navbar.whitepaper') }}</a></li>
+              <li><a target="_blank" :href="urlList.economicModel">{{ $t('navbar.economicModel') }}</a></li>
             </ul>
           </li>
 
-          <!--<li><a class="scroll-bottom" target="_blank" :href="urlList.introduction">{{ $t('navbar.introduction') }}</a></li>-->
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTeam">{{ $t('navbar.team') }}</a></li>
 
-          <li><a class="scroll-bottom" @click="scrollBottom">{{ $t('navbar.contact') }}</a></li>
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollNews">{{ $t('navbar.news') }}</a></li>
 
-          <!--<li><a class="scroll-bottom" @click="changeLocale">{{ $t('language.name') }}</a></li>-->
+          <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
+
+          <li v-if="$route.name !== 'FAQ'" class="dropdown li-language-style">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.language') }}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>
+              <li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+
+      <div class="hidden-lg hidden-md hidden-sm">
+        <ul class="nav navbar-nav navbar-right narbar-min">
+          <li class="dropdown li-bars-style">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li v-if="$route.name !== 'Home'"><a class="scroll-bottom" @click="goToHome">{{ $t('navbar.home') }}</a></li>
+              <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
+              <li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>
+              <li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>
+            </ul>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -38,36 +61,81 @@
     data() {
       return {
         urlList: {
-          introduction: '',
-          whitePaper: ''
+          introductionEn: 'https://www.nkn.org/doc/NKN_Introduction_en.pdf',
+          introductionCn: 'https://www.nkn.org/doc/NKN_Introduction_cn.pdf',
+          whitePaper: 'https://www.nkn.org/doc/NKN_Whitepaper.pdf',
+          economicModel: 'https://www.nkn.org/doc/NKN_Economic_Model.pdf'
         }
       }
     },
     created() {
-      this.getConfig()
+      // this.getConfig()
     },
     methods: {
+      goToHome() {
+        if(this.$route.name !== 'Home') {
+          this.$router.push({name: 'Home'})
+        } else {
+          this.scrollTop()
+        }
+      },
       scrollBottom() {
         $(window).scrollTop($("#home").get(0).scrollHeight)
       },
       scrollTop() {
-        $(window).scrollTop(0)
+        $(window).scrollTop()
+      },
+      scrollOverview() {
+        if(this.$route.name !== 'Home') {
+          this.$router.push({name: 'Home'})
+        }
+        $(window).scrollTop(900)
+      },
+      scrollNews() {
+        if (this.$route.name !== 'Home') {
+          this.$router.push({name: 'Home'})
+        }
+
+        if (this.$i18n.locale === 'en') {
+          $(window).scrollTop(4500)
+        } else {
+          $(window).scrollTop(4200)
+        }
       },
       scrollTeam() {
-        $(window).scrollTop(2500)
+        if(this.$route.name !== 'Home') {
+          this.$router.push({name: 'Home'})
+        }
+
+        if (this.$i18n.locale === 'en') {
+          $(window).scrollTop(6000)
+        } else {
+          $(window).scrollTop(5700)
+        }
       },
-      changeLocale() {
-        let locale = this.$i18n.locale
-        locale === 'zh' ? this.$i18n.locale = 'en' : this.$i18n.locale = 'zh'
-        LangStorage.setLang(this.$i18n.locale)
+      changeLocale(locale) {
+        if (locale !== this.$i18n.locale) {
+          this.$i18n.locale = locale
+          LangStorage.setLang(this.$i18n.locale)
+        }
+
+        if(this.$i18n.locale === 'zh') {
+          $("#twitter-widget-0").hide();
+        } else {
+          $("#twitter-widget-0").show();
+        }
       },
       getConfig() {
         return this.axios.get(process.env.CONFIG_URL + 'config.json').then(response => {
-          this.urlList.introduction = response.data.introduction
+          this.urlList.introductionEn = response.data.introduction_en
+          this.urlList.introductionCn = response.data.introduction_cn
           this.urlList.whitePaper = response.data.whitepaper
+          this.urlList.economicModel = response.data.economic_model
         }).catch(error => {
-          this.urlList.introduction = this.$config.introduction
-          this.urlList.whitePaper = this.$config.whitePaper
+          this.urlList.introductionEn = this.$config.introduction_en
+          this.urlList.introductionCn = this.$config.introduction_cn
+          this.urlList.whitePaper = this.$config.whitepaper
+          this.urlList.economicModel = this.$config.economic_model
         })
       }
     }
@@ -82,29 +150,78 @@
     background-color: transparent;
     border-color: transparent;
     border-radius: 0;
-    height: 90px;
-  }
-  .navbar-header {
-    height: 90px;
+    height: 135px;
+    text-transform: none;
   }
   .navbar-header img{
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 35px;
     width: 134px;
+    height: 50px;
+  }
+  .navbar-default-blue {
+    background-color: #253a7e;
+    border-radius: 0;
+    height: 135px;
+    color: white;
+    margin-bottom: 0;
+  }
+
+  .li-language-style {
+    border: 1px solid #253a7e;
+    border-radius: 20px;
+    height: 34px;
+  }
+  .li-bars-style {
+    position: absolute;
+    right: -20px;
+    top: 52px;
+    z-index: 999;
+  }
+  .li-bars-style > ul > li > a {
+    height: 40px;
+    line-height: 32px !important;
+  }
+  .narbar-min > li > a {
+    font-size: 27px !important;
+  }
+
+  .nkn-banner-logo:hover {
+    cursor: pointer;
   }
 
   .navbar-nav {
+    margin-top: 56px;
     margin-right: 25px;
   }
-  .navbar-nav > li > a,
-  .navbar-nav > li > a:active,
-  .navbar-nav > li > a:focus,
-  .navbar-nav > li > a:visited {
-    font-size: 14px;
-    font-weight: 400;
+  .navbar-nav > li {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .narbar-main-pages > li > a,
+  .narbar-main-pages > li > a:active,
+  .narbar-main-pages > li > a:focus,
+  .narbar-main-pages > li > a:visited {
+    text-transform: none;
+    font-size: 16px;
     color: #253A7E;
     background-color: transparent;
   }
+  .narbar-child-pages > li > a,
+  .narbar-child-pages > li > a:active,
+  .narbar-child-pages > li > a:focus,
+  .narbar-child-pages > li > a:visited {
+    text-transform: none;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+  }
+
   .navbar-default .navbar-nav>.open>a,
   .navbar-default .navbar-nav>.open>a:hover,
   .navbar-default .navbar-nav>.open>a:focus {
@@ -121,7 +238,6 @@
     background-color: white;
   }
 
-  .scroll-top:hover,
   .scroll-bottom:hover {
     cursor: pointer;
   }

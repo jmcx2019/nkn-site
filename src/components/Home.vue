@@ -4,17 +4,17 @@
 
     <div class="container-fluid">
       <banner></banner>
-      <what-is-nkn></what-is-nkn>
-      <!--<goals-of-nkn></goals-of-nkn>-->
-      <!--<nkn-features></nkn-features>-->
-      <technical-highlights></technical-highlights>
-      <road-map></road-map>
+      <introduction></introduction>
+      <why></why>
+      <what></what>
+      <how></how>
+      <e-a></e-a>
+      <news></news>
       <team></team>
       <!--<investor></investor>-->
-      <news></news>
       <slogan></slogan>
       <the-footer></the-footer>
-      <nav-bottom></nav-bottom>
+      <!--<nav-bottom></nav-bottom>-->
     </div>
   </div>
 </template>
@@ -22,14 +22,14 @@
 <script>
   import NavBar from './NavBar'
   import Banner from './Banner'
-  import GoalsOfNkn from './GoalsOfNkn'
-  import NknFeatures from './NknFeatures'
-  import TechnicalHighlights from './TechnicalHighlights'
-  import RoadMap from './RoadMap'
+  import Introduction from './Introduction'
+  import Why from './highlights/Why'
+  import What from './highlights/What'
+  import How from './highlights/How'
+  import EA from './highlights/EA'
+  import News from './News'
   import Team from './Team'
   import Investor from './Investor'
-  import WhatIsNkn from './WhatIsNkn'
-  import News from './News'
   import Slogan from './Slogan'
   import TheFooter from './TheFooter'
   import NavBottom from './NavBottom'
@@ -39,14 +39,14 @@
     components: {
       NavBar,
       Banner,
-      WhatIsNkn,
-      GoalsOfNkn,
-      NknFeatures,
-      TechnicalHighlights,
-      RoadMap,
-      Team,
-      Investor,
+      Introduction,
+      Why,
+      What,
+      How,
+      EA,
       News,
+      Team,
+      // Investor,
       Slogan,
       TheFooter,
       NavBottom
