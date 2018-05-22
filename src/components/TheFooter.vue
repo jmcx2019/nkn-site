@@ -84,18 +84,18 @@
                 <span class="community-area-lg-md-sm-name">{{ $t('footer.contact.email') }}</span>
               </a>
             </div>
-            <!--<div v-show="emailSubscribeShow[0]" class="form-group div-input-email">-->
-              <!--<div class="input-group">-->
-                <!--<input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">-->
-                <!--<span class="input-group-btn btn-email">-->
-                  <!--<button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>-->
-                <!--</span>-->
-              <!--</div>-->
-            <!--</div>-->
-            <!--<div v-show="!emailSubscribeShow[0]" class="success-style">{{ $t('footer.subscribe.success') }}</div>-->
-            <!--<div class="txt-nkn-events">-->
-              <!--<p>{{ $t('footer.subscribe.noMiss') }}</p>-->
-            <!--</div>-->
+            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email">
+              <div class="input-group">
+                <input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">
+                <span class="input-group-btn btn-email">
+                  <button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>
+                </span>
+              </div>
+            </div>
+            <div v-show="!emailSubscribeShow[0]" class="success-style">{{ $t('footer.subscribe.success') }}</div>
+            <div class="txt-nkn-events">
+              <p>{{ $t('footer.subscribe.noMiss') }}</p>
+            </div>
           </div>
         </div>
 

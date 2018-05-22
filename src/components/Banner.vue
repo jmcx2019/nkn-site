@@ -3,28 +3,22 @@
 
     <div class="container">
       <div class="row row-banner-slogan hidden-xs">
-        <p>{{ $t('banner.slogan1') }}</p>
-        <p>{{ $t('banner.slogan2') }}</p>
+        <p>{{ $t('banner.slogan') }}</p>
       </div>
       <div class="row row-banner-slogan-xs hidden-lg hidden-md hidden-sm">
-        <p>{{ $t('banner.slogan1') }}</p>
-        <p>{{ $t('banner.slogan2') }}</p>
+        <p>{{ $t('banner.slogan') }}</p>
       </div>
 
       <div class="row hidden-xs">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <a v-if="$i18n.locale === 'en'" class="a-btn-hover btn-about2 btn-right" target="_blank" :href="urlList.introductionEn">
-            {{ $t('banner.introduction') }}
-          </a>
-          <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-right" target="_blank" :href="urlList.introductionCn">
-            {{ $t('banner.introduction') }}
-          </a>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <router-link class="a-nkn-github2 btn-github2 btn-left" :to="{name: 'Calendar', params: {}}">
-            {{ $t('banner.sourceCode') }}
-          </router-link>
-        </div>
+        <a v-if="$i18n.locale === 'en'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionEn">
+          {{ $t('banner.introduction') }}
+        </a>
+        <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
+          {{ $t('banner.introduction') }}
+        </a>
+        <router-link class="a-nkn-github2 btn-github2 btn-left" :to="{name: 'Calendar', params: {}}">
+          {{ $t('banner.sourceCode') }}
+        </router-link>
       </div>
 
       <div class="row hidden-lg hidden-md hidden-sm">
@@ -83,35 +77,36 @@
   .row-banner-slogan-xs {
     color: white;
     position: relative;
-    text-align: center;
-    margin-top: 200px;
-    margin-bottom: 80px;
-    font-size: 20px;
+    margin: 270px 0 20px;
+    font-size: 18px;
+    line-height: 32px;
     padding: 15px;
+    max-width: 480px;
+    letter-spacing: 0.05em;
   }
   .row-banner-slogan-xs {
     margin-top: 100px;
+    width: 100%;
+    text-align: left;
   }
 
   .a-btn-hover,
   .btn-about2,
   .btn-github2 {
-    width: 260px;
-    height: 76px;
-    line-height: 76px;
+    width: 160px;
+    height: 56px;
+    line-height: 52px;
     border-radius: 38px;
     text-align: center;
     cursor: pointer;
     position: relative;
-    margin-left: 50px;
-    font-size: 20px;
+    margin-left: 25px;
+    font-size: 18px;
     font-weight: 200;
     letter-spacing: 0.1em;
-    background-color: #2d4db6;
+    background-color: #0b1943;
+    border: #4d6ec3 solid 2px;
     color: white;
-  }
-  .btn-right {
-    float: right;
   }
   .btn-left {
     float: left;

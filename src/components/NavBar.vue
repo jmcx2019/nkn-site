@@ -3,7 +3,7 @@
     <div class="container container-fluid-fix">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/nkn-logo-blue.png" @click="goToHome">
+        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/nkn-logo-white.png" @click="goToHome">
         <img v-if="$route.name !== 'Home'" class="nkn-banner-logo" src="./../assets/white_logo.png" @click="goToHome">
       </div>
       <div class="hidden-xs">
@@ -24,7 +24,7 @@
 
           <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-news-container')">{{ $t('navbar.news') }}</a></li>
 
-          <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
+          <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
 
           <li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>
         </ul>
@@ -36,7 +36,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
               <li v-if="$route.name !== 'Home'"><a class="scroll-bottom" @click="goToHome">{{ $t('navbar.home') }}</a></li>
-              <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
+              <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
               <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
               <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
               <li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>
@@ -130,10 +130,9 @@
     z-index: 1;
   }
   .navbar-header img{
-    margin-top: 50px;
-    margin-left: 35px;
-    width: 134px;
-    height: 50px;
+    margin-top: 60px;
+    margin-left: 15px;
+    width: 75px;
   }
   .navbar-default-blue {
     background-color: #253a7e;
@@ -189,6 +188,7 @@
   .narbar-main-pages > li > a:visited {
     text-transform: none;
     font-size: 16px;
+    font-weight: 300;
     color: white;
     background-color: transparent;
   }
