@@ -8,7 +8,7 @@
       </div>
       <div class="hidden-xs">
         <ul class="nav navbar-nav navbar-right" :class="[$route.name === 'Home' ? 'narbar-main-pages' : 'narbar-child-pages']">
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollOverview">{{ $t('navbar.overview') }}</a></li>
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-overview-container')">{{ $t('navbar.overview') }}</a></li>
 
           <li v-if="$route.name === 'Home'" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
@@ -20,9 +20,9 @@
             </ul>
           </li>
 
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTeam">{{ $t('navbar.team') }}</a></li>
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-team-container')">{{ $t('navbar.team') }}</a></li>
 
-          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollNews">{{ $t('navbar.news') }}</a></li>
+          <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-news-container')">{{ $t('navbar.news') }}</a></li>
 
           <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
 
@@ -74,39 +74,15 @@
           this.scrollTop()
         }
       },
+      scrollTo(targetId) {
+          let $target = $("#" + targetId)
+          $(window).scrollTop($target.offset().top)
+      },
       scrollBottom() {
         $(window).scrollTop($("#home").get(0).scrollHeight)
       },
       scrollTop() {
         $(window).scrollTop()
-      },
-      scrollOverview() {
-        if (this.$route.name !== 'Home') {
-          this.$router.push({name: 'Home'})
-        }
-        $(window).scrollTop(900)
-      },
-      scrollNews() {
-        if (this.$route.name !== 'Home') {
-          this.$router.push({name: 'Home'})
-        }
-
-        if (this.$i18n.locale === 'en') {
-          $(window).scrollTop(4330)
-        } else {
-          $(window).scrollTop(4050)
-        }
-      },
-      scrollTeam() {
-        if (this.$route.name !== 'Home') {
-          this.$router.push({name: 'Home'})
-        }
-
-        if (this.$i18n.locale === 'en') {
-          $(window).scrollTop(5700)
-        } else {
-          $(window).scrollTop(5450)
-        }
       },
       changeLocale() {
         let locale = 'en'

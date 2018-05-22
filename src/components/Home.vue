@@ -1,16 +1,17 @@
 <template>
   <div id="home">
+    <video-banner/>
     <nav-bar></nav-bar>
 
     <div class="container-fluid">
       <banner></banner>
       <!--<introduction></introduction>-->
-      <why></why>
+      <why id="nkn-overview-container"></why>
       <what></what>
       <how></how>
       <e-a></e-a>
-      <news></news>
-      <team></team>
+      <news id="nkn-news-container"></news>
+      <team id="nkn-team-container"></team>
       <!--<investor></investor>-->
       <slogan></slogan>
       <the-footer></the-footer>
@@ -33,11 +34,13 @@
   import Slogan from './Slogan'
   import TheFooter from './TheFooter'
   import NavBottom from './NavBottom'
+  import VideoBanner from "./VideoBanner";
 
 	export default {
     name: "home",
     components: {
-      NavBar,
+        VideoBanner,
+        NavBar,
       Banner,
       Introduction,
       Why,
