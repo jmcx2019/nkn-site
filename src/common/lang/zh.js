@@ -15,7 +15,9 @@ module.exports = {
   },
   banner: {
     introduction: '项目介绍',
-    sourceCode: '源代码'
+    sourceCode: '源代码',
+    slogan1: 'New Kind of Network is the new networking foundation for Internet built on native blockchain.',
+    slogan2: 'It is truly open, decentralized, dynamic, safe, shared and owned by the community.'
   },
   whatWeDo: {
     name: '下一代互联网',

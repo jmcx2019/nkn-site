@@ -4,7 +4,7 @@
 
     <div class="container-fluid">
       <banner></banner>
-      <introduction></introduction>
+      <!--<introduction></introduction>-->
       <why></why>
       <what></what>
       <how></how>

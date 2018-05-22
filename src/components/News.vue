@@ -66,8 +66,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video1">
           <div class="video1-area" v-on:mouseenter="showIcon(0)" v-on:mouseleave="hideIcon(0)">
             <video width="100%" controls="controls" v-show="isPlay[0].status">
-              <source :src="videoUrlList.ogg.nknVideo1" type="video/ogg">
               <source :src="videoUrlList.mp4.nknVideo1" type="video/mp4">
+              <source :src="videoUrlList.ogg.nknVideo1" type="video/ogg">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
               <img class="img-video1" src="../assets/media/video/video1.png">
@@ -78,8 +78,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video2">
           <div class="video2-area" v-on:mouseenter="showIcon(1)" v-on:mouseleave="hideIcon(1)">
             <video width="100%" controls="controls" v-show="isPlay[0].status">
-              <source :src="videoUrlList.ogg.nknVideo2" type="video/ogg">
               <source :src="videoUrlList.mp4.nknVideo2" type="video/mp4">
+              <source :src="videoUrlList.ogg.nknVideo2" type="video/ogg">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/oyNjTbtMD94">
               <img class="img-video2" src="../assets/media/video/video2.png">
@@ -90,8 +90,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video3">
           <div class="video3-area" v-on:mouseenter="showIcon(2)" v-on:mouseleave="hideIcon(2)">
             <video width="100%" controls="controls" v-show="isPlay[0].status">
-              <source :src="videoUrlList.ogg.nknVideo3" type="video/ogg">
               <source :src="videoUrlList.mp4.nknVideo3" type="video/mp4">
+              <source :src="videoUrlList.ogg.nknVideo3" type="video/ogg">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/4pl2WkEbkus">
               <img class="img-video3" src="./../assets/media/video/video3.png">

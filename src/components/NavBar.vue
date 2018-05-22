@@ -3,7 +3,7 @@
     <div class="container container-fluid-fix">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/Contactlogo2x.png" @click="goToHome">
+        <img v-if="$route.name === 'Home'"  class="nkn-banner-logo" src="./../assets/nkn-logo-blue.png" @click="goToHome">
         <img v-if="$route.name !== 'Home'" class="nkn-banner-logo" src="./../assets/white_logo.png" @click="goToHome">
       </div>
       <div class="hidden-xs">
@@ -27,13 +27,6 @@
           <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
 
           <li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>
-          <!--<li v-if="$route.name !== 'FAQ'" class="dropdown li-language-style">-->
-            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.language') }}<span class="caret"></span></a>-->
-            <!--<ul class="dropdown-menu">-->
-              <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
-              <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
-            <!--</ul>-->
-          <!--</li>-->
         </ul>
       </div><!-- /.navbar-collapse -->
 
@@ -151,15 +144,14 @@
 </script>
 
 <style scoped>
-  .container-fluid-fix {
-    padding: 0;
-  }
   .navbar-default {
     background-color: transparent;
     border-color: transparent;
     border-radius: 0;
     height: 135px;
     text-transform: none;
+    margin-bottom: 0 !important;
+    z-index: 1;
   }
   .navbar-header img{
     margin-top: 50px;
@@ -211,13 +203,17 @@
     padding-bottom: 5px;
   }
 
+  .narbar-main-pages > li > a:hover {
+    color: #26bcff;
+  }
+
   .narbar-main-pages > li > a,
   .narbar-main-pages > li > a:active,
   .narbar-main-pages > li > a:focus,
   .narbar-main-pages > li > a:visited {
     text-transform: none;
     font-size: 16px;
-    color: #253A7E;
+    color: white;
     background-color: transparent;
   }
   .narbar-child-pages > li > a,
@@ -233,7 +229,7 @@
   .navbar-default .navbar-nav>.open>a,
   .navbar-default .navbar-nav>.open>a:hover,
   .navbar-default .navbar-nav>.open>a:focus {
-    color: #c93420;
+    color: #26bcff;
     background-color: transparent;
   }
   .dropdown-menu>li>a {
@@ -242,14 +238,14 @@
   }
   .dropdown-menu>li>a:hover,
   .dropdown-menu>li>a:focus {
-    color: #c93420;
+    color: #26bcff;
     background-color: white;
+  }
+  .dropdown-toggle:hover {
+    color: #26bcff !important;
   }
 
   .scroll-bottom:hover {
     cursor: pointer;
-  }
-  .navbar-nav > li > a:hover {
-    color: #c93420;
   }
 </style>
