@@ -9,7 +9,7 @@ module.exports = {
     whitepaper: 'White Paper',
     economicModel: 'Economic Model',
     faq: 'FAQ',
-    language: 'EN ',
+    language: '中文',
     english: 'English',
     chinese: '中文'
   },
@@ -34,7 +34,7 @@ module.exports = {
     },
     model3: {
       name: 'Centralized Net Coordination',
-      content: 'Traditional software defined networks (SDN) require huge costs and resources to provide centralized coordination. The centralized controller can become a bottleneck for performance as well as a target of coordinated malicious attacks paralyzing entire networks. These networks also lacks dynamic control based on economic incentive and real-time pricing.'
+      content: 'The SDN （Software Defined Network）is highly dependent on its controller, and attacks to it can lead to whole network fall. SDN lacks visibility of traffic, which makes it extremely difficult to locate problems in the network.'
     }
   },
   what: {

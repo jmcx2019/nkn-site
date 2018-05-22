@@ -9,7 +9,7 @@ module.exports = {
     whitepaper: '白皮书',
     economicModel: '经济模型',
     faq: 'FAQ',
-    language: 'CN ',
+    language: 'English',
     english: 'English',
     chinese: '中文'
   },
@@ -34,7 +34,7 @@ module.exports = {
     },
     model3: {
       name: '中心化的网络协调',
-      content: '传统的软件定义网络（SDN）需要巨大的成本和资源进行协调和维护, 并且缺乏协调网络资源的经济激励因素。集中协调资源可能会因信任问题或滥用权力而损害用户的利益。一旦中央实体出现故障，整个网络运行将受到影响。'
+      content: '软件定义网络SDN高度依赖控制器，对其攻击可以导致全网沦陷。同时，SDN缺乏流量可视性，这使得在网络中定位问题变得极为困难。'
     }
   },
   what: {
@@ -118,7 +118,7 @@ module.exports = {
     }
   },
   team: {
-    name: '团队介绍',
+    name: '核心团队介绍',
     yanBoLi: {
       name: '李彦博',
       tit1: '创始人 | 核心开发者',
@@ -131,13 +131,13 @@ module.exports = {
     bruceZLi: {
       name: '李铮',
       tit: '联合创始人| 战略与创新',
-      desc1: '在诺基亚和谷歌创立了数百万美元的创业项目，领导美国，欧盟和中国的大型研发团队。',
-      desc2: '电信创新专家，专注于企业战略和商务发展。',
+      desc1: '曾在Google和Nokia领导多个网络技术创新项目，并成功推向市场。',
+      desc2: '网络新领域开拓者，专注于企业战略和商务发展。',
       linkedin: 'https://www.linkedin.com/in/zbruceli'
     },
     yiLunZhang: {
       name: '张逸伦',
-      tit: '联合创始人| 核心研究员和开发人员',
+      tit: '联合创始人| 核心研究和开发者',
       desc1: '加州大学圣地亚哥分校物理学博士。北京大学物理系本科。',
       desc2: '元胞自动机、伊辛模型、分布式信息处理系统领域专家。全栈工程师。',
       linkedin: 'https://www.linkedin.com/in/yilun-zhang-',
@@ -159,14 +159,14 @@ module.exports = {
     },
     chrisWu: {
       name: '吴璆熠',
-      tit: '商务拓展和营销总监',
+      tit: '商务拓展和运营',
       desc1: '在高通和亚马逊的网络部门工作近10年，曾担任资深商务拓展和技术项目经理，具有丰富的行业经验。',
       desc2: '与美国，以色列，印度，欧洲和中国的研发团队一起支持多个全球领先的移动网络项目。',
       linkedin: 'https://www.linkedin.com/in/chris-wu-36446846'
     },
     whitfieldDiffie: {
       name: 'Whitfield Diffie',
-      tit: 'NKN技术顾问',
+      tit: 'NKN顾问',
       url: 'https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2',
       introductionCryptography: '公钥密码学发明人（Diffie-Hellman）',
       introductionTuringAward: '2015年图灵奖得主',

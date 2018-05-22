@@ -70,7 +70,7 @@
               <source :src="videoUrlList.mp4.nknVideo1" type="video/mp4">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
-              <img class="img-video1" src="./../assets/media/video1.png">
+              <img class="img-video1" src="../assets/media/video/video1.png">
               <img v-show="isShowPlay[0]" class="img-youtube1" src="./../assets/media/youtube.png" alt="">
             </a>
           </div>
@@ -82,7 +82,7 @@
               <source :src="videoUrlList.mp4.nknVideo2" type="video/mp4">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/oyNjTbtMD94">
-              <img class="img-video2" src="./../assets/media/Wifi-Now.png">
+              <img class="img-video2" src="../assets/media/video/video2.png">
               <img v-show="isShowPlay[1]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>
           </div>
@@ -94,7 +94,7 @@
               <source :src="videoUrlList.mp4.nknVideo3" type="video/mp4">
             </video>
             <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/4pl2WkEbkus">
-              <img class="img-video3" src="./../assets/media/video2.png">
+              <img class="img-video3" src="./../assets/media/video/video3.png">
               <img v-show="isShowPlay[2]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>
           </div>

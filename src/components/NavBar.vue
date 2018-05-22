@@ -26,13 +26,14 @@
 
           <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
 
-          <li v-if="$route.name !== 'FAQ'" class="dropdown li-language-style">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.language') }}<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>
-              <li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>
-            </ul>
-          </li>
+          <li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>
+          <!--<li v-if="$route.name !== 'FAQ'" class="dropdown li-language-style">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.language') }}<span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu">-->
+              <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
+              <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
         </ul>
       </div><!-- /.navbar-collapse -->
 
@@ -43,8 +44,9 @@
             <ul class="dropdown-menu">
               <li v-if="$route.name !== 'Home'"><a class="scroll-bottom" @click="goToHome">{{ $t('navbar.home') }}</a></li>
               <li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>
-              <li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>
-              <li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>
+              <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
+              <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
+              <li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>
             </ul>
           </li>
         </ul>
@@ -61,10 +63,10 @@
     data() {
       return {
         urlList: {
-          introductionEn: 'https://www.nkn.org/doc/NKN_Introduction_en.pdf',
-          introductionCn: 'https://www.nkn.org/doc/NKN_Introduction_cn.pdf',
-          whitePaper: 'https://www.nkn.org/doc/NKN_Whitepaper.pdf',
-          economicModel: 'https://www.nkn.org/doc/NKN_Economic_Model.pdf'
+          introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
+          introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf',
+          whitePaper: process.env.DOC_URL + 'NKN_Whitepaper.pdf',
+          economicModel: process.env.DOC_URL + 'NKN_Economic_Model.pdf'
         }
       }
     },
@@ -73,7 +75,7 @@
     },
     methods: {
       goToHome() {
-        if(this.$route.name !== 'Home') {
+        if (this.$route.name !== 'Home') {
           this.$router.push({name: 'Home'})
         } else {
           this.scrollTop()
@@ -86,7 +88,7 @@
         $(window).scrollTop()
       },
       scrollOverview() {
-        if(this.$route.name !== 'Home') {
+        if (this.$route.name !== 'Home') {
           this.$router.push({name: 'Home'})
         }
         $(window).scrollTop(900)
@@ -97,29 +99,35 @@
         }
 
         if (this.$i18n.locale === 'en') {
-          $(window).scrollTop(4500)
+          $(window).scrollTop(4330)
         } else {
-          $(window).scrollTop(4200)
+          $(window).scrollTop(4050)
         }
       },
       scrollTeam() {
-        if(this.$route.name !== 'Home') {
+        if (this.$route.name !== 'Home') {
           this.$router.push({name: 'Home'})
         }
 
         if (this.$i18n.locale === 'en') {
-          $(window).scrollTop(6000)
-        } else {
           $(window).scrollTop(5700)
+        } else {
+          $(window).scrollTop(5450)
         }
       },
-      changeLocale(locale) {
+      changeLocale() {
+        let locale = 'en'
+
+        if (this.$i18n.locale === 'en') {
+          locale = 'zh'
+        }
+
         if (locale !== this.$i18n.locale) {
           this.$i18n.locale = locale
           LangStorage.setLang(this.$i18n.locale)
         }
 
-        if(this.$i18n.locale === 'zh') {
+        if (this.$i18n.locale === 'zh') {
           $("#twitter-widget-0").hide();
         } else {
           $("#twitter-widget-0").show();

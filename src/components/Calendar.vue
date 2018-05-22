@@ -68,8 +68,8 @@
     methods: {
       getDate() {
         let myDate = new Date()
-        let now = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate()
-        let days = this.DateDiff(now, '2018-06-15')
+        let now = myDate.getFullYear() + '/' + (myDate.getMonth() + 1) + '/' + myDate.getDate()
+        let days = this.dateDiff(now, '2018/07/02')
         if (days < 10) {
           this.days1 = 0
           this.days2 = days
@@ -78,13 +78,13 @@
           this.days2 = days % 10
         }
       },
-      DateDiff(sDate1, sDate2) {    //sDate1和sDate2是2002-12-18格式
+      dateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式
         let aDate, oDate1, oDate2, iDays
         aDate = sDate1.split("-")
-        oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])    //转换为12-18-2002格式
+        oDate1 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0]) //转换为12-18-2002格式
         aDate = sDate2.split("-")
-        oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
-        iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24)    //把相差的毫秒数转换为天数
+        oDate2 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0])
+        iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数
         return iDays
       }
     },

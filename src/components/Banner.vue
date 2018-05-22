@@ -54,8 +54,8 @@
     data() {
       return {
         urlList: {
-          introductionEn: 'https://www.nkn.org/doc/NKN_Introduction_en.pdf',
-          introductionCn: 'https://www.nkn.org/doc/NKN_Introduction_cn.pdf'
+          introductionEn: process.env.DOC_URL + 'NKN_Introduction_en.pdf',
+          introductionCn: process.env.DOC_URL + 'NKN_Introduction_cn.pdf'
         }
       }
     },
