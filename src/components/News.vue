@@ -252,7 +252,8 @@
   }
 
   .new-img:hover{
-    width: 91%;
+    margin-top: -1px;
+    padding-bottom: 1px;
   }
   .news-area {
     margin-top: 15px;

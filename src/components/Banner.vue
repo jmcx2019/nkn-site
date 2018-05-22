@@ -1,9 +1,5 @@
 <template>
   <div class="row nkn-banner">
-    <video class="video-banner-lg-md-sm" width="100%" autoplay muted loop>
-      <source src="./../assets/video/NKN-animation.mp4" type="video/mp4">
-      <source src="./../assets/video/NKN-animation.ogg" type="video/ogg">
-    </video>
 
     <div class="container">
       <div class="row row-banner-slogan hidden-xs">
@@ -82,24 +78,7 @@
   .nkn-banner {
     position: relative;
     height: 640px;
-    background-color: #030B15;
-    z-index: 0;
   }
-  .video-banner-lg-md-sm {
-    position: absolute;
-    /*top: -135px;*/
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: auto;
-    width: 100%;
-    z-index: -999;
-  }
-
-  .video-banner-lg-md-sm {
-    top: -135px;
-  }
-
   .row-banner-slogan,
   .row-banner-slogan-xs {
     color: white;
