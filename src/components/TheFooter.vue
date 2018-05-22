@@ -117,6 +117,15 @@
         <div class="row row-footer-further hidden-lg hidden-md hidden-sm visible-xs-12">
           <p>{{ $t('footer.contact.content') }}</p>
           <a class="email-address-xs" href="mailto:contact@nkn.org">{{ $t('footer.contact.email') }}</a>
+
+          <div v-show="emailSubscribeXsShow[0]" class="div-input-email">
+            <input v-model="emailAddressXs" type="text" class="input-email-xs" :placeholder="$t('footer.subscribe.placeholder')">
+            <button @click="subscribeXsEmail" class="btn btn-default btn-email-xs" type="button">{{ $t('footer.subscribe.btnName') }}</button>
+          </div>
+          <div v-show="!emailSubscribeXsShow[0]" class="success-style-xs">{{ $t('footer.subscribe.success') }}</div>
+          <div class="txt-nkn-events">
+            <p>{{ $t('footer.subscribe.noMiss') }}</p>
+          </div>
         </div>
 
         <!--<img class="img-texture" src="./../assets/footer/texture.png" alt="">-->
@@ -143,7 +152,9 @@
         },
         iconShow: [false],
         emailAddress: '',
-        emailSubscribeShow: [true]
+        emailSubscribeShow: [true],
+        emailAddressXs: '',
+        emailSubscribeXsShow: [true]
       }
     },
     created() {
@@ -176,6 +187,18 @@
           return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
             if(response.data.code === 1000) {
               this.$set(this.emailSubscribeShow, 0, false);
+            }
+          }).catch(error => {
+            console.log(error)
+          })
+        }
+      },
+      subscribeXsEmail() {
+        if(this.emailAddressXs !== '') {
+          let formData = {address: this.emailAddressXs}
+          return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
+            if(response.data.code === 1000) {
+              this.$set(this.emailSubscribeXsShow, 0, false);
             }
           }).catch(error => {
             console.log(error)
@@ -287,12 +310,23 @@
   .div-input-email {
     margin-top: 35px !important;
   }
-  .input-email {
+  .input-email,
+  .input-email-xs {
     height: 57px;
     width: 256px;
     font-size: 18px;
   }
-  .btn-email {
+  .input-email-xs {
+    padding: 0 8px;
+    height: 48px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: black;
+  }
+  .btn-email,
+  .btn-email-xs {
     height: 57px;
     width: 131px;
     background-color: #37bfef;
@@ -303,20 +337,30 @@
     font-weight: 200;
     text-transform: none;
   }
-  .btn-email:hover {
+  .btn-email:hover,
+  .btn-email-xs:hover {
     background-color: #69DAFF;
   }
+  .btn-email-xs {
+    height: 48px;
+    border-radius: 4px;
+    margin: 5px auto;
+    width: 80%;
+  }
 
-  .success-style {
+  .success-style,
+  .success-style-xs {
     font-size: 18px;
     color: green;
+  }
+  .success-style-xs {
+    margin: 30px 15px;
   }
 
   .txt-nkn-events {
     font-size: 18px;
     color: #8ea1c6;
   }
-
   .img-qrcode {
     width: 120px;
   }
