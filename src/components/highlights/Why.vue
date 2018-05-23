@@ -88,6 +88,7 @@
   }
 
   .th-p-title {
+    font-weight: bolder;
     margin-top: 40px;
     font-size: 20px;
   }

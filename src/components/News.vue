@@ -64,8 +64,8 @@
 
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video1">
-          <div class="video1-area" v-on:mouseenter="showIcon(0)" v-on:mouseleave="hideIcon(0)">
-            <video width="100%" controls="controls" v-show="isPlay[0].status">
+          <div class="video1-area">
+            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
               <source :src="videoUrlList.mp4.nknVideo1" type="video/mp4">
               <source :src="videoUrlList.ogg.nknVideo1" type="video/ogg">
             </video>
@@ -76,8 +76,8 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video2">
-          <div class="video2-area" v-on:mouseenter="showIcon(1)" v-on:mouseleave="hideIcon(1)">
-            <video width="100%" controls="controls" v-show="isPlay[0].status">
+          <div class="video2-area">
+            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
               <source :src="videoUrlList.mp4.nknVideo2" type="video/mp4">
               <source :src="videoUrlList.ogg.nknVideo2" type="video/ogg">
             </video>
@@ -88,8 +88,8 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video3">
-          <div class="video3-area" v-on:mouseenter="showIcon(2)" v-on:mouseleave="hideIcon(2)">
-            <video width="100%" controls="controls" v-show="isPlay[0].status">
+          <div class="video3-area">
+            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
               <source :src="videoUrlList.mp4.nknVideo3" type="video/mp4">
               <source :src="videoUrlList.ogg.nknVideo3" type="video/ogg">
             </video>
@@ -125,8 +125,8 @@
         },
         isChina: [{status: false}],
         noChina: [{status: false}],
-        isPlay: [{status: true}],
-        isShowPlay: [false, false, false]
+        isPlay: [{status: false}],
+        isShowPlay: [true, true, true]
       }
     },
     created() {
@@ -242,7 +242,7 @@
   .img-youtube1,
   .img-youtube2,
   .img-youtube3 {
-    width: 144px;
+    width: 72px;
     position: absolute;
     margin: auto;
     top: 0;
