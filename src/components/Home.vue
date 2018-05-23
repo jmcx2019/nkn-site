@@ -15,7 +15,7 @@
       <!--<investor></investor>-->
       <slogan></slogan>
       <the-footer></the-footer>
-      <!--<nav-bottom></nav-bottom>-->
+      <nav-bottom></nav-bottom>
     </div>
   </div>
 </template>

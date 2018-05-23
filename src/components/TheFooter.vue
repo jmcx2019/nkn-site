@@ -1,6 +1,6 @@
 <template>
   <div class="row footer">
-    <div class="container">
+    <!--<div class="container">-->
       <div class="row">
         <div class="community-area-lg-md-sm row hidden-xs">
           <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
@@ -76,7 +76,7 @@
             </div>
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-5">
+          <div class="col-lg-5 col-md-5 col-sm-5 nkn-contact-container">
             <p>{{ $t('footer.contact.content') }}</p>
             <div>
               <a class="email-address" href="mailto:contact@nkn.org">
@@ -132,7 +132,7 @@
 
         <div class="copyright">{{ $t('copyRight') }}</div>
       </div>
-    </div>
+    <!--</div>-->
   </div>
 </template>
 
@@ -183,26 +183,56 @@
       },
       subscribeEmail() {
         if(this.emailAddress !== '') {
-          let formData = {address: this.emailAddress}
-          return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
-            if(response.data.code === 1000) {
-              this.$set(this.emailSubscribeShow, 0, false);
-            }
-          }).catch(error => {
-            console.log(error)
-          })
+
+            $('<img src="" style="visibility: hidden;width: 0;height: 0"/>')
+                .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddress).appendTo($("body"))
+                .on("error", function () {
+                    $(this).remove()
+                })
+
+            this.$set(this.emailSubscribeShow, 0, false);
+
+            // let formData = {address: this.emailAddress}
+
+            // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
+            //     this.$set(this.emailSubscribeShow, 0, false);
+            // }).catch(error => {
+            //     console.log(error)
+            // })
+
+          // return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
+          //   if(response.data.code === 1000) {
+          //     this.$set(this.emailSubscribeShow, 0, false);
+          //   }
+          // }).catch(error => {
+          //   console.log(error)
+          // })
         }
       },
       subscribeXsEmail() {
         if(this.emailAddressXs !== '') {
-          let formData = {address: this.emailAddressXs}
-          return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
-            if(response.data.code === 1000) {
-              this.$set(this.emailSubscribeXsShow, 0, false);
-            }
-          }).catch(error => {
-            console.log(error)
-          })
+            $('<img src="" style="visibility: hidden;width: 0;height: 0"/>')
+                .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddressXs).appendTo($("body"))
+                .on("error", function () {
+                    $(this).remove()
+                })
+
+            this.$set(this.emailSubscribeXsShow, 0, false);
+
+            // let formData = {address: this.emailAddressXs}
+
+            // return this.axios.get('/sub.rec.php?email=' + this.emailAddress).then(response => {
+            //     this.$set(this.emailSubscribeShow, 0, false);
+            // }).catch(error => {
+            //     console.log(error)
+            // })
+          // return this.axios.post(process.env.API_URL + 'email/new', formData).then(response => {
+          //   if(response.data.code === 1000) {
+          //     this.$set(this.emailSubscribeXsShow, 0, false);
+          //   }
+          // }).catch(error => {
+          //   console.log(error)
+          // })
         }
       }
     }
@@ -232,6 +262,8 @@
   }
   .p-footer-col-name {
     margin-bottom: 50px;
+    font-size: 24px !important;
+    font-weight: bolder !important;
   }
 
   .community-area-lg-md-sm-a-24 {
@@ -246,7 +278,7 @@
   }
   .community-area-lg-md-sm-name {
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 300;
     position: absolute;
     line-height:35px;
     left: 60px;
@@ -260,6 +292,12 @@
   .community-area-xs > a {
     color: white;
     margin: 0 15px;
+  }
+
+  .email-address span,
+  .email-address-xs span {
+    font-size: 20px !important;
+    font-weight: 400;
   }
 
   .email-address,

@@ -7,7 +7,6 @@
         <div class="container">
           <div class="row hidden-sm hidden-xs">
             <div class="col-lg-3 col-md-3 div-calendar-txt">
-              <p>{{ $t('calendar.first') }}</p>
             </div>
             <div class="col-lg-3 col-md-3 div-calendar-days div-calendar-days-left">
               <img class="img-calendar-days" src="./../assets/calendar/calender.png" alt="">
@@ -18,13 +17,16 @@
               <p>{{ days2 }}</p>
             </div>
             <div class="col-lg-3 col-md-3 div-calendar-txt">
-              <p>{{ $t('calendar.second') }}</p>
             </div>
+          </div>
+
+          <div class="row hidden-sm hidden-xs">
+            <p>{{ $t('calendar.first') }}</p>
           </div>
 
           <div class="row hidden-lg hidden-md">
             <div class="row div-calendar-txt-xs">
-              <p>{{ $t('calendar.first') }}</p>
+              <!--<p>{{ $t('calendar.first') }}</p>-->
             </div>
             <div class="row">
               <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 div-calendar-days-xs div-calendar-days-left-xs">
@@ -37,7 +39,7 @@
               </div>
             </div>
             <div class="row div-calendar-txt-xs">
-              <p>{{ $t('calendar.second') }}</p>
+              <p>{{ $t('calendar.first') }}</p>
             </div>
           </div>
         </div>
@@ -103,6 +105,7 @@
     font-size: 24px;
     text-align: center;
     padding: 110px 0;
+
   }
 
   .div-calendar-txt {

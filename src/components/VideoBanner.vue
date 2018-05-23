@@ -1,6 +1,6 @@
 <template>
     <div id="nkn-video-banner-outer">
-        <video id="nkn-video-banner" class="video-banner-lg-md-sm" width="100%" autoplay muted loop>
+        <video id="nkn-video-banner" class="video-banner-lg-md-sm" width="100%" preload="metadata" autoplay playsinline muted loop>
             <source src="./../assets/video/NKN-animation.mp4" type="video/mp4">
             <source src="./../assets/video/NKN-animation.ogg" type="video/ogg">
         </video>

@@ -16,7 +16,7 @@
         <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
           {{ $t('banner.introduction') }}
         </a>
-        <router-link class="a-nkn-github2 btn-github2 btn-left" :to="{name: 'Calendar', params: {}}">
+        <router-link class="a-nkn-github2 btn-github2 lg-btn-github2 btn-left" :to="{name: 'Calendar', params: {}}">
           {{ $t('banner.sourceCode') }}
         </router-link>
       </div>
@@ -101,12 +101,16 @@
     cursor: pointer;
     position: relative;
     margin-left: 25px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 200;
     letter-spacing: 0.1em;
     background-color: #0b1943;
     border: #4d6ec3 solid 2px;
     color: white;
+  }
+
+  .btn-github2.lg-btn-github2 {
+    margin-left: 60px;
   }
   .btn-left {
     float: left;

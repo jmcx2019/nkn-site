@@ -89,11 +89,13 @@
   .th-p-title {
     margin-top: 40px;
     font-size: 20px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+    font-weight: bolder;
   }
   .th-p-title-xs {
     margin-top: 40px;
     font-size: 20px;
+    font-weight: bolder;
   }
   .th-p-content {
     margin-top: 15px;

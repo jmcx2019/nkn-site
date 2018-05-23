@@ -14,8 +14,8 @@ module.exports = {
     chinese: '中文'
   },
   banner: {
-    introduction: 'INTRO',
-    sourceCode: 'GITHUB',
+    introduction: 'Introduction',
+    sourceCode: 'Open Source',
     slogan: 'NKN is the new kind of network connectivity protocol & ecosystem powered by blockchain for an open, decentralized, and shared Internet.'
   },
   whatWeDo: {
@@ -34,8 +34,8 @@ module.exports = {
       content: 'A huge inefficiency exists in today’s Internet since connectivity and bandwidth are not balanced between supply and demand. Ephemeral networking resource are lost every second.'
     },
     model3: {
-      name: 'Centralized Net Coordination',
-      content: 'The SDN （Software Defined Network）is highly dependent on its controller, and attacks to it can lead to whole network fall. SDN lacks visibility of traffic, which makes it extremely difficult to locate problems in the network.'
+      name: 'Deficiency of today\'s SDN',
+      content: 'Traditional SDN (Software Defined Networks) need centralized controller: a performance bottleneck & target for coordinated attacks paralyzing entire networks.  SDN also lacks dynamic control based on real-time traffic & pricing.'
     }
   },
   what: {
@@ -132,7 +132,7 @@ module.exports = {
     bruceZLi: {
       name: 'Zheng “Bruce” Li',
       tit: 'Co-Founder | Strategy & Innovation',
-      desc1: 'Founded multi million $ startup projects at Nokia & Google, led R&D teams across US, EU, CN.',
+      desc1: 'Founded multi million dollars startup projects at Nokia & Google, led R&D teams across US, EU, CN.',
       desc2: 'Expert on telecom innovation, specializing in strategy and business development.',
       linkedin: 'https://www.linkedin.com/in/zbruceli'
     },
@@ -241,8 +241,8 @@ module.exports = {
     a11: 'Absolutely, we would love to form a big community. We are not focusing only on making the community bigger, but more importantly a higher quality community. That community will embrace technology, use, improve, and expand NKN network, participate in NKN core software and application development, support new users.',
   },
   calendar: {
-    first: 'To Open Source',
-    second: 'days away, stay tuned'
+    first: 'Days to Open Source',
+    second: 'days'
   },
   footer: {
     home: 'Home',
