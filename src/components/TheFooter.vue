@@ -76,24 +76,46 @@
             </div>
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-5 nkn-contact-container">
-            <p>{{ $t('footer.contact.content') }}</p>
-            <div>
-              <a class="email-address" href="mailto:contact@nkn.org">
+          <div v-show="$i18n.locale === 'zh'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
+            <p class="row nkn-contact-title">{{ $t('footer.contact.content') }}</p>
+            <div class="row">
+              <a class="email-address nkn-email-subscribe-title row pull-right" href="mailto:contact@nkn.org">
                 <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                <span class="community-area-lg-md-sm-name">{{ $t('footer.contact.email') }}</span>
+                <span class="community-area-lg-md-sm-name nkn-email-lg">{{ $t('footer.contact.email') }}</span>
               </a>
             </div>
-            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email">
-              <div class="input-group">
+            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email row">
+              <div class="input-group pull-right nkn-email-subscribe-input-group">
                 <input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">
                 <span class="input-group-btn btn-email">
                   <button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>
                 </span>
               </div>
             </div>
-            <div v-show="!emailSubscribeShow[0]" class="success-style">{{ $t('footer.subscribe.success') }}</div>
-            <div class="txt-nkn-events">
+            <div v-show="!emailSubscribeShow[0]" class="row success-style">{{ $t('footer.subscribe.success') }}</div>
+            <div class="row txt-nkn-events-lg">
+              <p>{{ $t('footer.subscribe.noMiss') }}</p>
+            </div>
+          </div>
+
+          <div v-show="$i18n.locale === 'en'" class="col-lg-4 col-md-4 col-sm-4 nkn-contact-container">
+            <p class="row nkn-contact-title-en">{{ $t('footer.contact.content') }}</p>
+            <div class="row">
+              <a class="email-address nkn-email-subscribe-title-en row pull-right" href="mailto:contact@nkn.org">
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <span class="community-area-lg-md-sm-name nkn-email-lg-en">{{ $t('footer.contact.email') }}</span>
+              </a>
+            </div>
+            <div v-show="emailSubscribeShow[0]" class="form-group div-input-email row">
+              <div class="input-group pull-right nkn-email-subscribe-input-group">
+                <input v-model="emailAddress" type="text" class="form-control input-email" :placeholder="$t('footer.subscribe.placeholder')">
+                <span class="input-group-btn btn-email">
+                  <button @click="subscribeEmail" class="btn btn-default btn-email" type="button">{{ $t('footer.subscribe.btnName') }}</button>
+                </span>
+              </div>
+            </div>
+            <div v-show="!emailSubscribeShow[0]" class="row success-style-en">{{ $t('footer.subscribe.success') }}</div>
+            <div class="row txt-nkn-events-lg-en">
               <p>{{ $t('footer.subscribe.noMiss') }}</p>
             </div>
           </div>
@@ -157,8 +179,9 @@
         emailSubscribeXsShow: [true]
       }
     },
-    created() {
-      // this.getConfig()
+    mounted() {
+      let $this = $(this.$el)
+      // let
     },
     methods: {
       scrollTop() {
@@ -184,7 +207,7 @@
       subscribeEmail() {
         if(this.emailAddress !== '') {
 
-            $('<img src="" style="visibility: hidden;width: 0;height: 0"/>')
+            $('<img src="" style="position:absolute;left: 0; top: 0;visibility: hidden;width: 0;height: 0"/>')
                 .attr("src", 'http://nkncms.nkn.org/sub.rec.php?email=' + this.emailAddress).appendTo($("body"))
                 .on("error", function () {
                     $(this).remove()
@@ -310,6 +333,30 @@
     color: #69DAFF;
   }
 
+  .nkn-email-lg {
+    position: inherit !important;
+    padding-right: 234px;
+  }
+
+  .nkn-contact-title {
+    text-align: right;
+    padding-right: 333px;
+  }
+
+  .nkn-email-lg-en {
+    position: inherit !important;
+    padding-right: 118px;
+  }
+
+  .nkn-contact-title-en {
+    text-align: right;
+    padding-right: 118px;
+  }
+
+  .nkn-email-subscribe-title-en {
+    padding-right: 117px;
+  }
+
   .copyright {
     position: absolute;
     color: white;
@@ -347,6 +394,7 @@
 
   .div-input-email {
     margin-top: 35px !important;
+    font-size: 0;
   }
   .input-email,
   .input-email-xs {
@@ -386,6 +434,18 @@
     width: 80%;
   }
 
+  .success-style {
+    text-align: right;
+    padding-right: 167px;
+  }
+
+  .success-style-en {
+    font-size: 18px;
+    color: green;
+    text-align: right;
+    padding-right: 32px;
+  }
+
   .success-style,
   .success-style-xs {
     font-size: 18px;
@@ -399,6 +459,21 @@
     font-size: 18px;
     color: #8ea1c6;
   }
+
+  .txt-nkn-events-lg {
+    font-size: 18px;
+    color: #8ea1c6;
+    text-align: right;
+    padding-right: 147px;
+  }
+
+  .txt-nkn-events-lg-en {
+    font-size: 18px;
+    color: #8ea1c6;
+    text-align: right;
+    padding-right: 46px;
+  }
+
   .img-qrcode {
     width: 120px;
   }
@@ -423,6 +498,9 @@
     margin-top: 80px;
   }
 
+  .nkn-email-subscribe-input-group{
+    padding-right: 15px;
+  }
   /*input placeholder字体颜色*/
   input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #e4e4e4;}
   input:-moz-placeholder, textarea:-moz-placeholder {color:#e4e4e4;}

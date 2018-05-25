@@ -16,7 +16,12 @@
         <a v-if="$i18n.locale === 'zh'" class="a-btn-hover btn-about2 btn-left" target="_blank" :href="urlList.introductionCn">
           {{ $t('banner.introduction') }}
         </a>
-        <router-link class="a-nkn-github2 btn-github2 lg-btn-github2 btn-left" :to="{name: 'Calendar', params: {}}">
+
+        <router-link v-show="$i18n.locale === 'en'" class="a-nkn-github2 btn-github2 btn-center" :to="{name: 'Calendar', params: {}}">
+          {{ $t('banner.sourceCode') }}
+        </router-link>
+
+        <router-link v-show="$i18n.locale === 'zh'" class="a-nkn-github2 btn-github2 btn-center" :to="{name: 'Calendar', params: {}}">
           {{ $t('banner.sourceCode') }}
         </router-link>
       </div>
@@ -31,7 +36,11 @@
           </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
-          <router-link class="a-nkn-github2 btn-github2 btn-center" :to="{name: 'Calendar', params: {}}">
+          <router-link v-show="$i18n.locale === 'en'" class="a-nkn-github2 btn-github2 btn-center" :to="{name: 'Calendar', params: {}}">
+            {{ $t('banner.sourceCode') }}
+          </router-link>
+
+          <router-link v-show="$i18n.locale === 'zh'" class="a-nkn-github2 btn-github2 btn-center" :to="{name: 'Calendar', params: {}}">
             {{ $t('banner.sourceCode') }}
           </router-link>
         </div>
