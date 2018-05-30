@@ -98,10 +98,10 @@ module.exports = {
       newsTxt2: 'The answer is YES! We just recognized Pied Piper’s “New Internet ” concept was matching to our target! The difference is that we are already on the way to deliver it as product.',
       newsTime2: 'April 28, 2018',
       newsUrl2: 'https://medium.com/nknetwork/is-nkn-the-pied-pipers-new-internet-in-silicon-valley-77f71c525da6',
-      newsTit3: 'All things you may need to know about NKN',
-      newsTxt3: 'NKN (New Kind of Network) is a new project aiming to rebuild the Internet that will be truly open, decentralized, dynamic, safe, shared and owned by the community.',
-      newsTime3: 'April 28, 2018',
-      newsUrl3: 'https://medium.com/nknetwork/all-things-you-may-need-to-know-about-nkn-efa905aef760',
+      newsTit3: 'NKN Monthly Report, May 2018',
+      newsTxt3: 'A comprehensive project report to NKN community (4/1/2018~4/30/2018). NKN team had a great month of hard work to deliver results. ',
+      newsTime3: 'May 4, 2018',
+      newsUrl3: 'https://medium.com/nknetwork/nkn-monthly-report-may-2018-c4bffac5830f',
     },
     newsCN: {
       newsTit1: '现代密码学之父入场区块链，和NKN一起打造未来网络',
@@ -183,6 +183,9 @@ module.exports = {
       introduction9: 'IEEE Richard W. Hamming Medal in 2010.',
     }
   },
+  partnersAndAlliance: {
+    tit: "Partners and Alliance"
+  },
   video: {
     name: 'Video',
     btnName: 'MORE VIDEOS'
@@ -241,8 +244,8 @@ module.exports = {
     a11: 'Absolutely, we would love to form a big community. We are not focusing only on making the community bigger, but more importantly a higher quality community. That community will embrace technology, use, improve, and expand NKN network, participate in NKN core software and application development, support new users.',
   },
   calendar: {
-    first: 'Days to Open Source',
-    second: 'days'
+    first: 'Days',
+    second: 'to Open Source'
   },
   footer: {
     home: 'Home',
@@ -276,7 +279,7 @@ module.exports = {
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: 'The NKN fundraising has been completed. NKN will not directly or appoint any institutions and individuals to raise funds. Please don\'t be deceived and be aware of scammers.'
+    txt: 'NKN will be listed on one of the leading crypto asset exchanges <a target="_blank" href="https://gate.io/article/16464">Gate.io</a> at 4:00 a.m UTC on May 28th, 2018'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }

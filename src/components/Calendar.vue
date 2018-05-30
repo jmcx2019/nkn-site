@@ -6,6 +6,9 @@
       <div class="row row-calendar">
         <div class="container">
           <div class="row hidden-sm hidden-xs">
+            <!--<p v-if="$i18n.locale === 'zh'">{{ $t('calendar.first') }}</p>-->
+          </div>
+          <div class="row hidden-sm hidden-xs">
             <div class="col-lg-3 col-md-3 div-calendar-txt">
             </div>
             <div class="col-lg-3 col-md-3 div-calendar-days div-calendar-days-left">
@@ -14,19 +17,22 @@
             </div>
             <div class="col-lg-3 col-md-3 div-calendar-days div-calendar-days-right">
               <img class="img-calendar-days" src="./../assets/calendar/calender.png" alt="">
-              <p>{{ days2 }}</p>
+              <p class="nkn-calendar-last-num">{{ days2 }}
+                <span v-if="$i18n.locale === 'zh'" class="nkn-calendar-unit">{{ $t('calendar.first') }}</span>
+                <span v-if="$i18n.locale === 'en'" class="nkn-calendar-unit-en">{{ $t('calendar.first') }}</span>
+              </p>
             </div>
             <div class="col-lg-3 col-md-3 div-calendar-txt">
             </div>
           </div>
 
           <div class="row hidden-sm hidden-xs">
-            <p>{{ $t('calendar.first') }}</p>
+            <p>{{ $t('calendar.second') }}</p>
           </div>
 
           <div class="row hidden-lg hidden-md">
             <div class="row div-calendar-txt-xs">
-              <!--<p>{{ $t('calendar.first') }}</p>-->
+              <!--<p v-if="$i18n.locale === 'zh'">{{ $t('calendar.first') }}</p>-->
             </div>
             <div class="row">
               <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 div-calendar-days-xs div-calendar-days-left-xs">
@@ -35,11 +41,14 @@
               </div>
               <div class="col-sm-4 col-xs-4 div-calendar-days-xs div-calendar-days-right-xs">
                 <img class="img-calendar-days-xs-right" src="./../assets/calendar/calender.png" alt="">
-                <p>{{ days2 }}</p>
+                <p>{{ days2 }}
+                  <span v-if="$i18n.locale === 'zh'" class="nkn-calendar-unit">{{ $t('calendar.first') }}</span>
+                  <span v-if="$i18n.locale === 'en'" class="nkn-calendar-unit-en">{{ $t('calendar.first') }}</span>
+                </p>
               </div>
             </div>
             <div class="row div-calendar-txt-xs">
-              <p>{{ $t('calendar.first') }}</p>
+              <p>{{ $t('calendar.second') }}</p>
             </div>
           </div>
         </div>
@@ -55,6 +64,7 @@
   import NavBar from './NavBar'
   import TheFooter from './TheFooter'
   import NavBottom from './NavBottom'
+  import moment from 'moment'
 
 	export default {
     name: "calendar",
@@ -69,9 +79,19 @@
     },
     methods: {
       getDate() {
-        let myDate = new Date()
-        let now = myDate.getFullYear() + '/' + (myDate.getMonth() + 1) + '/' + myDate.getDate()
-        let days = this.dateDiff(now, '2018/07/02')
+        let target = moment('2018-07-02')
+        let today = moment()
+        let days = target.diff(today, 'days') + 1
+        let msDiff = target.diff(today)
+
+        if(msDiff < 0) {
+          days -= 1
+        }
+
+        if(days < 0) {
+          days = 0
+        }
+
         if (days < 10) {
           this.days1 = 0
           this.days2 = days
@@ -79,15 +99,6 @@
           this.days1 = parseInt(days / 10 % 10)
           this.days2 = days % 10
         }
-      },
-      dateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式
-        let aDate, oDate1, oDate2, iDays
-        aDate = sDate1.split("-")
-        oDate1 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0]) //转换为12-18-2002格式
-        aDate = sDate2.split("-")
-        oDate2 = new Date(aDate[1] + '/' + aDate[2] + '/' + aDate[0])
-        iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数
-        return iDays
       }
     },
     components: {
@@ -104,8 +115,7 @@
     color: #253A7E;
     font-size: 24px;
     text-align: center;
-    padding: 110px 0;
-
+    padding: 60px 0;
   }
 
   .div-calendar-txt {
@@ -120,6 +130,39 @@
     font-size: 120px;
     position: relative;
   }
+
+  .nkn-calendar-last-num {
+    position: relative;
+  }
+
+  .div-calendar-days .nkn-calendar-unit {
+    position: absolute;
+    right: -60px;
+    bottom: 100px;
+    font-size: 24px !important;
+  }
+
+  .div-calendar-days .nkn-calendar-unit-en {
+    position: absolute;
+    right: -80px;
+    bottom: 100px;
+    font-size: 24px !important;
+  }
+
+  .div-calendar-days-xs .nkn-calendar-unit {
+    position: absolute;
+    right: -10px;
+    bottom: 30px;
+    font-size: 24px !important;
+  }
+
+  .div-calendar-days-xs .nkn-calendar-unit-en {
+    position: absolute;
+    right: -40px;
+    bottom: 30px;
+    font-size: 24px !important;
+  }
+
   .img-calendar-days {
     position: absolute;
     left: 0;

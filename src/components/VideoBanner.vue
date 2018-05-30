@@ -1,6 +1,9 @@
 <template>
     <div id="nkn-video-banner-outer">
-        <video id="nkn-video-banner" class="video-banner-lg-md-sm" width="100%" preload="metadata" autoplay playsinline muted loop>
+        <video autoplay loop muted playsinline
+                :poster="poster"
+                id="nkn-video-banner"
+                width="100%">
             <source src="./../assets/video/NKN-animation.mp4" type="video/mp4">
             <source src="./../assets/video/NKN-animation.ogg" type="video/ogg">
         </video>
@@ -8,9 +11,14 @@
 </template>
 
 <script>
-    export default {
-        name: "video-banner"
+  export default {
+    name: "video-banner",
+    data: function () {
+      return {
+        poster: require("./../assets/video/NKN-animation-cover.jpg")
+      }
     }
+  }
 </script>
 
 <style scoped>
@@ -27,5 +35,4 @@
     #nkn-video-banner {
         width: 100%;
     }
-
 </style>

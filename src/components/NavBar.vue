@@ -11,8 +11,9 @@
           <li v-if="$route.name === 'Home'"><a class="scroll-bottom" @click="scrollTo('nkn-overview-container')">{{ $t('navbar.overview') }}</a></li>
 
           <li v-if="$route.name === 'Home'" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                aria-haspopup="true" aria-expanded="false">{{ $t('navbar.docs') }}<span class="caret"></span></a>
+            <ul class="dropdown-menu nkn-doc-link">
               <li><a v-if="$i18n.locale === 'en'" target="_blank" :href="urlList.introductionEn">{{ $t('navbar.introduction') }}</a></li>
               <li><a v-if="$i18n.locale === 'zh'" target="_blank" :href="urlList.introductionCn">{{ $t('navbar.introduction') }}</a></li>
               <li><a target="_blank" :href="urlList.whitePaper">{{ $t('navbar.whitepaper') }}</a></li>
@@ -26,23 +27,24 @@
 
           <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
 
-          <!--<li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>-->
+          <li v-if="$route.name !== 'FAQ'"><a class="scroll-bottom" @click="changeLocale">{{ $t('navbar.language') }}</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
 
-      <div class="hidden-lg hidden-md hidden-sm" v-if="$route.name !== 'Home'">
-        <!--<ul class="nav navbar-nav navbar-right narbar-min">-->
-          <!--<li class="dropdown li-bars-style">-->
-            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>-->
-            <!--<ul class="dropdown-menu">-->
+      <div class="hidden-lg hidden-md hidden-sm">
+        <ul class="nav navbar-nav navbar-right narbar-min">
+          <li class="dropdown li-bars-style">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
               <!--<li><a class="scroll-bottom" @click="goToHome">{{ $t('navbar.home') }}</a></li>-->
-              <!--&lt;!&ndash;<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>&ndash;&gt;-->
-              <!--&lt;!&ndash;<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>&ndash;&gt;-->
-              <!--&lt;!&ndash;<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>&ndash;&gt;-->
-              <!--&lt;!&ndash;<li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>&ndash;&gt;-->
-            <!--</ul>-->
-          <!--</li>-->
-        <!--</ul>-->
+              <!--<li v-if="$route.name !== 'FAQ'"><router-link class="scroll-bottom" :to="{name: 'FAQ', params: {}}">{{ $t('navbar.faq') }}</router-link></li>-->
+              <!--<li><a @click="changeLocale('en')">{{ $t('navbar.english') }}</a></li>-->
+              <!--<li><a @click="changeLocale('zh')">{{ $t('navbar.chinese') }}</a></li>-->
+              <li><a @click="changeLocale">{{ $t('navbar.language') }}</a></li>
+            </ul>
+          </li>
+        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -217,6 +219,11 @@
     color: #26bcff;
     background-color: transparent;
   }
+
+  .nkn-doc-link {
+    min-width: 100px;
+  }
+
   .dropdown-menu>li>a {
     color: #253A7E;
     background-color: white;

@@ -1,7 +1,7 @@
 module.exports = {
   navbar: {
     home: '首页',
-    overview: '概览',
+    overview: '概述',
     news: '新闻',
     team: '团队',
     docs: '文档 ',
@@ -16,7 +16,7 @@ module.exports = {
   banner: {
     introduction: '项目介绍',
     sourceCode: '源代码',
-    slogan: 'NKN是基于区块链技术驱动的一种开放的、去中心化的和共享的新型网络基础设施和生态系统。'
+    slogan: 'NKN是区块链驱动的一种开放，去中心化，社区共建共享的新型网络基础设施和生态系统。'
   },
   whatWeDo: {
     name: '下一代互联网',
@@ -24,26 +24,26 @@ module.exports = {
   },
   why: {
     tit: 'Why',
-    name: '现有互联网中的问题',
+    name: '当前面临的问题',
     model1: {
       name: '网络中立性',
-      content: '废除网络中立原则意味着互联网服务提供商有权利根据自己的利益对服务和内容加以区别。如果他们愿意的话，他们可以阻止，限制和排列内容的优先顺序。'
+      content: '网络中立性意味着网络服务商平等对待所有使用该网络的用户，而不是根据自己的利益对服务和内容加以区别。'
     },
     model2: {
       name: '资源利用率',
-      content: '当今互联网提供全球连接和信息传输时存在资源利用率低下的问题。无论是在时间还是空间上，网络连接和带宽在需求和供应之间存在不平衡。'
+      content: '网络资源分配和供需的不均衡导致网络连接和信息传输效率不够高效。'
     },
     model3: {
-      name: '中心化的网络协调',
-      content: '软件定义网络SDN高度依赖控制器，对其攻击可以导致全网沦陷。同时，SDN缺乏流量可视性，这使得在网络中定位问题变得极为困难。f'
+      name: '软件定义网络(SDN) 的问题',
+      content: '现有SDN过度依赖中心控制容易造成单点故障，也难以根据实时流量和价格进行高效调度。'
     }
   },
   what: {
     tit: 'What',
-    name: '革新网络技术和业务模式',
+    name: '创新网络技术和商业模式',
     model1: {
-      name: '区块链的第三支柱',
-      content: 'NKN通过在网络层面进行创新，对互联网基础设施的第三大支柱(网络)进行区块链化，继以太坊区块链化计算能力以及Filecoin区块链化存储之后，革新区块链网络生态系统。'
+      name: '区块链基础设施的第三支柱',
+      content: '继以太坊区块链化计算能力，Filecoin/IPFS区块链化存储，NKN对信息基础设施的第三大支柱-网络传输进行区块链化，创建新型区块链网络生态系统。'
     },
     model2: {
       name: '去中心化的数据传输交易所',
@@ -51,7 +51,7 @@ module.exports = {
     },
     model3: {
       name: '去中心化的软件定义网络',
-      content: 'NKN将SDN(软件定义网络)区块链化, 它使网络运营商和企业能够根据实时性能和成本进行动态路由，降低数据传输的成本和提高整个网络的效率。'
+      content: 'NKN将SDN区块链化, 它使网络运营商和企业能够根据实时性能和成本进行动态路由，降低数据传输的成本和提高整个网络的效率。'
     }
   },
   how: {
@@ -63,31 +63,31 @@ module.exports = {
     },
     model2: {
       name: '中继证明',
-      content: 'PoR使用数据传输量去衡量路由中继节点的工作量。 构造签名链来保证其可验证性，不可伪造性及不可篡改性。'
+      content: 'PoR用有效数据传输量去衡量路由中继节点的工作量。 构造签名链来保证其可验证性，不可伪造性及不可篡改性。'
     },
     model3: {
-      name: '资源共享激励',
-      content: 'NKN建立了独有的经济模型， 能够有效地激励矿工节点，同时也鼓励让更多的节点加入网络为其他节点提供数据传输服务来获取利益回报。它能够很好地调动网路参与者和建设者的积极性 ，从而构筑更好的社区共建网络。'
+      name: '网络资源共享激励',
+      content: 'NKN的经济模型充分调动参与者的积极性，能够有效地激励更多参与者为他人提供网络服务以获取经济回报。共建共享新型网络基础设施和生态系统。'
     }
   },
   ea: {
-    tit: 'Ecosystem Attractions',
+    tit: '生态吸引力',
     name: 'NKN不仅仅是一个“新互联网”',
     model1: {
-      name: '超级开放性',
-      content: 'NKN始终保持网络的开放性和可扩展性，节点之间可以无障碍的连通。'
+      name: '网络漫游',
+      content: '无论何时何地， 任何设备都可以轻松接入NKN网络。'
     },
     model2: {
-      name: '数字资产化的连接能力',
-      content: '人们通过将闲置的网络资源分享给他人，从NKN系统中获得奖励。'
+      name: '共享网络资源',
+      content: '参与者通过将闲置的网络资源分享给他人，从NKN系统中获得奖励。'
     },
     model3: {
-      name: '共建网络',
-      content: 'NKN鼓励个体及企业部署设备到网络连接薄弱的区域，在增强网络连通性和吞吐量的同时自动结算来获益。'
+      name: '共建网络设施',
+      content: 'NKN鼓励个体及企业部署设备为其它节点提供服务，在增强网络连通性和吞吐量的同时自动结算来获益。'
     }
   },
   media: {
-    name: 'NKN新闻频道',
+    name: 'NKN新闻',
     twitterLoading: '加载中...',
     news: {
       newsTit1: 'From Turbo Code to Blockchain ：',
@@ -98,10 +98,10 @@ module.exports = {
       newsTxt2: 'The answer is YES! We just recognized Pied Piper’s “New Internet ” concept was matching to our target! The difference is that we are already on the way to deliver it as product.',
       newsTime2: 'April 28, 2018',
       newsUrl2: 'https://medium.com/nknetwork/is-nkn-the-pied-pipers-new-internet-in-silicon-valley-77f71c525da6',
-      newsTit3: 'All things you may need to know about NKN',
-      newsTxt3: 'NKN (New Kind of Network) is a new project aiming to rebuild the Internet that will be truly open, decentralized, dynamic, safe, shared and owned by the community.',
-      newsTime3: 'April 28, 2018',
-      newsUrl3: 'https://medium.com/nknetwork/all-things-you-may-need-to-know-about-nkn-efa905aef760',
+      newsTit3: 'NKN Monthly Report, May 2018',
+      newsTxt3: 'A comprehensive project report to NKN community (4/1/2018~4/30/2018). NKN team had a great month of hard work to deliver results. ',
+      newsTime3: 'May 4, 2018',
+      newsUrl3: 'https://medium.com/nknetwork/nkn-monthly-report-may-2018-c4bffac5830f',
     },
     newsCN: {
       newsTit1: '现代密码学之父入场区块链，和NKN一起打造未来网络',
@@ -109,28 +109,28 @@ module.exports = {
       newsTime1: '2018-02-26',
       newsUrl1: 'https://36kr.com/p/5120836.html',
       newsTit2: 'NKN：被重新定义的“区块链”网络',
-      newsTxt2: '李彦博是 Onchain 的联合创始人，具有丰富的项目开发和管理经验。他是onchain区块链平台DNA（distribute network architecture）核心设计和开发者之一。',
+      newsTxt2: '李彦博是 Onchain 的联合创始人，具有丰富的项目开发和管理经验。他是Onchain区块链平台DNA（distribute network architecture）核心设计和开发者之一。',
       newsTime2: '2018-02-02',
       newsUrl2: 'http://www.sohu.com/a/220450794_257855',
-      newsTit3: 'NKN—下一代区块链技术的先行者',
-      newsTxt3: 'NKN 是一个新项目，旨在重建真正开放，分散，动态，安全，共享和由社区拥有的互联网。换句话来说, 这是一个新的网络区块链块重新定义。',
-      newsTime3: '2018-03-07',
-      newsUrl3: 'http://baijiahao.baidu.com/s?id=1594282489262417478&wfr=spider&for=pc'
+      newsTit3: 'NKN项目月报（2018年5月）',
+      newsTxt3: 'NKN研发团队通过这短短一个月的努力，取得了阶段性的成果。NKN开源日是重要里程碑，敬请期待。',
+      newsTime3: '2018-05-10',
+      newsUrl3: 'https://mp.weixin.qq.com/s/jmtRx-eSouELTDoQEmuGig'
     }
   },
   team: {
     name: '核心团队介绍',
     yanBoLi: {
       name: '李彦博',
-      tit1: '创始人 | 核心开发者',
+      tit1: '创始人| 核心开发',
       tit2: '前Onchain联合创始人',
-      desc1: '负责区块链系统“DNA”的核心设计和开发。',
-      desc2: '自由软件和开源运动倡导者，Linux内核网络代码贡献者。',
+      desc1: '曾负责区块链系统“DNA”的核心设计和开发。',
+      desc2: '自由软件和开源运动倡导者， Linux 内核网络代码贡献者。',
       linkedin: 'https://www.linkedin.com/in/yanbo-li-b478585',
       github: 'https://github.com/dreamfly281'
     },
     bruceZLi: {
-      name: '李铮',
+      name: 'Zheng “Bruce” Li',
       tit: '联合创始人| 战略与创新',
       desc1: '曾在Google和Nokia领导多个网络技术创新项目，并成功推向市场。',
       desc2: '网络新领域开拓者，专注于企业战略和商务发展。',
@@ -138,36 +138,36 @@ module.exports = {
     },
     yiLunZhang: {
       name: '张逸伦',
-      tit: '联合创始人| 核心研究和开发者',
+      tit: '联合创始人| 核心研究和开发',
       desc1: '加州大学圣地亚哥分校物理学博士。北京大学物理系本科。',
-      desc2: '元胞自动机、伊辛模型、分布式信息处理系统领域专家。全栈工程师。',
+      desc2: 'Cellular Automata、Ising Model、分布式信息处理系统领域专家。全栈工程师。',
       linkedin: 'https://www.linkedin.com/in/yilun-zhang-',
       github: 'https://github.com/yilunzhang'
     },
     justinWang: {
-      name: '王占仓',
-      tit: '联合创始人| 核心研究员',
+      name: 'Justin Wang',
+      tit: '联合创始人| 核心研究',
       desc1: '杰出的技术专家，拥有45项国际发行和待决专利。',
-      desc2: '具有10年的诺基亚，微软，亚马逊和爱立信产品开发经验。',
+      desc2: '具有10年的Nokia，Microsoft，Ericsson产品开发经验。',
       linkedin: 'https://www.linkedin.com/in/justin-wang-99b36016'
     },
     allenDixon: {
       name: 'Allen Dixon',
       tit: '商务拓展与法务合规',
-      desc1: '资深商务拓展专家，善于创造新的解决方案。',
-      desc2: '在苹果，亚马逊，创新初创公司等方面拥有超过20年的网络经验。',
+      desc1: '擅长将技术与市场紧密对接， 创造新的商业模式。',
+      desc2: '在电信行业拥有20年以上的丰富经验，曾领导多个与Apple、Amazon和初创企业合作的项目。',
       linkedin: 'https://www.linkedin.com/in/dixonal'
     },
     chrisWu: {
-      name: '吴璆熠',
+      name: 'Chris Wu',
       tit: '商务拓展和运营',
-      desc1: '在高通和亚马逊的网络部门工作近10年，曾担任资深商务拓展和技术项目经理，具有丰富的行业经验。',
+      desc1: '在Qualcomm和Amazon的网络部门工作近10年，曾担任资深商务拓展和技术项目经理，具有丰富的行业经验。',
       desc2: '与美国，以色列，印度，欧洲和中国的研发团队一起支持多个全球领先的移动网络项目。',
       linkedin: 'https://www.linkedin.com/in/chris-wu-36446846'
     },
     whitfieldDiffie: {
       name: 'Whitfield Diffie',
-      tit: 'NKN顾问',
+      tit: 'NKN 顾问',
       url: 'https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2',
       introductionCryptography: '公钥密码学发明人（Diffie-Hellman）',
       introductionTuringAward: '2015年图灵奖得主',
@@ -182,6 +182,9 @@ module.exports = {
       introduction8: 'IEEE信息理论学会Golden Jubilee技术创新奖；',
       introduction9: '2010年IEEE Richard W. Hamming奖章。',
     }
+  },
+  partnersAndAlliance: {
+    tit: "战略伙伴和联盟"
   },
   video: {
     name: 'Video',
@@ -293,8 +296,8 @@ module.exports = {
     a11: '当然，我们很乐意组建强大而且庞大社区。 我们并不是只关注让社区变得更大，更重要的是更高质量的社区。 NKN社区将促进创新，应用，改进和扩展NKN网络，参与NKN核心软件和应用开发，支持新用户。',
   },
   calendar: {
-    first: '距离NKN开源日仅有',
-    second: '天，敬请关注'
+    first: '天',
+    second: '开源核心代码'
   },
   footer: {
     home: '主页',
@@ -328,7 +331,7 @@ module.exports = {
   },
   navBottom: {
     gotIt: 'Got it',
-    txt: 'The NKN fundraising has been completed. NKN will not directly or appoint any institutions and individuals to raise funds. Please don\'t be deceived and be aware of scammers.'
+    txt: 'NKN将于中国时间2018年5月28日登陆全球知名交易平台<a target="_blank" href="https://gateio.io/article/16464">Gate.io</a>, 并于当天中午12点正式开通交易。'
   },
   copyRight: 'Copyright © 2017-2018 NKN    |    All rights reserved'
 }

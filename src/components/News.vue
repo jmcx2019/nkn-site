@@ -65,11 +65,20 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video1">
           <div class="video1-area">
-            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
+            <video id="nkn-news-v1"
+                   @ended="playEned('nkn-news-v1')"
+                   @click="playNews('nkn-news-v1')" width="100%" v-show="$i18n.locale === 'zh'" playsinline>
               <source :src="videoUrlList.mp4.nknVideo1" type="video/mp4">
               <source :src="videoUrlList.ogg.nknVideo1" type="video/ogg">
             </video>
-            <a v-show="!isPlay[0].status" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v1')"
+                 class="nkn-news-video-cover-zh"
+                 src="../assets/media/video/video1.png">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v1')"
+                 class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
+            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://www.youtube.com/watch?v=smzyW75ttH8">
               <img class="img-video1" src="../assets/media/video/video1.png">
               <img v-show="isShowPlay[0]" class="img-youtube1" src="./../assets/media/youtube.png" alt="">
             </a>
@@ -77,11 +86,22 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video2">
           <div class="video2-area">
-            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
-              <source :src="videoUrlList.mp4.nknVideo2" type="video/mp4">
-              <source :src="videoUrlList.ogg.nknVideo2" type="video/ogg">
+            <video id="nkn-news-v2"
+                   @ended="playEned('nkn-news-v2')"
+                   @click="playNews('nkn-news-v2')"
+                   :poster="videoPoster.p2" width="100%" v-show="$i18n.locale === 'zh'" playsinline>
+              <source :src="videoUrlList.mp4.nknVideo3" type="video/mp4">
+              <source :src="videoUrlList.ogg.nknVideo3" type="video/ogg">
             </video>
-            <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/oyNjTbtMD94">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v2')"
+                 class="nkn-news-video-cover-zh"
+                 src="../assets/media/video/video2.png">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v2')"
+                 class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
+
+            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://youtu.be/oyNjTbtMD94">
               <img class="img-video2" src="../assets/media/video/video2.png">
               <img v-show="isShowPlay[1]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>
@@ -89,11 +109,22 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-video3">
           <div class="video3-area">
-            <video width="100%" controls="controls" v-show="isPlay[0].status" playsinline>
-              <source :src="videoUrlList.mp4.nknVideo3" type="video/mp4">
-              <source :src="videoUrlList.ogg.nknVideo3" type="video/ogg">
+            <video id="nkn-news-v3"
+                   @ended="playEned('nkn-news-v3')"
+                   @click="playNews('nkn-news-v3')"
+                   :poster="videoPoster.p3" width="100%" v-show="$i18n.locale === 'zh'" playsinline>
+              <source :src="videoUrlList.mp4.nknVideo2" type="video/mp4">
+              <source :src="videoUrlList.ogg.nknVideo2" type="video/ogg">
             </video>
-            <a v-show="!isPlay[0].status" target="_blank" href="https://youtu.be/4pl2WkEbkus">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v3')"
+                 class="nkn-news-video-cover-zh"
+                 src="../assets/media/video/video3.png">
+            <img v-show="$i18n.locale === 'zh'"
+                 @click="playNews('nkn-news-v3')"
+                 class="img-youtube1 nkn-news-video-play-zh" src="./../assets/media/youtube.png" alt=""/>
+
+            <a v-show="$i18n.locale === 'en'" target="_blank" href="https://youtu.be/4pl2WkEbkus">
               <img class="img-video3" src="./../assets/media/video/video3.png">
               <img v-show="isShowPlay[2]" class="img-youtube2" src="./../assets/media/youtube.png" alt="">
             </a>
@@ -111,6 +142,11 @@
     name: "news",
     data() {
       return {
+        videoPoster: {
+          p1: require("../assets/media/video/video1.png"),
+          p2: require("../assets/media/video/video2.png"),
+          p3: require("../assets/media/video/video3.png")
+        },
         videoUrlList: {
           mp4: {
             nknVideo1: process.env.VIDEO_URL + 'nkn1.mp4',
@@ -133,6 +169,7 @@
       this.getIp(function (info, self) {
         if (info.country === '中国') {
           self.$set(self.isChina, 0, {status: true})
+          self.$set(self.isPlay, 0, {status: true})
         } else {
           self.$set(self.noChina, 0, {status: true})
           self.$set(self.isPlay, 0, {status: false})
@@ -145,6 +182,36 @@
       },
       hideIcon($id) {
         this.$set(this.isShowPlay, $id, false);
+      },
+      playEned(vid) {
+        let $video = $("#" + vid)
+        let $videoCover = $video.siblings('.nkn-news-video-cover-zh')
+        let $videoBtn = $video.siblings('.nkn-news-video-play-zh')
+
+        $videoBtn.show()
+        $video.removeAttr("controls")
+        $videoCover.show()
+      },
+      playNews(vid) {
+        let $video = $("#" + vid)
+        let $videoCover = $video.siblings('.nkn-news-video-cover-zh')
+        let $videoBtn = $video.siblings('.nkn-news-video-play-zh')
+
+        if($video.get(0).paused || $video.get(0).ended) {
+          $videoBtn.hide()
+          $videoCover.hide()
+          $video.get(0).play()
+          $video.attr("controls", "controls")
+        } else {
+          $videoBtn.show()
+          $video.get(0).pause()
+          $video.removeAttr("controls")
+          if($video.get(0).ended) {
+            $videoCover.show()
+          } else {
+            $videoCover.hide()
+          }
+        }
       },
       getIp(cb) {
         let script = document.createElement("script"),
@@ -195,7 +262,7 @@
   .twitter-area {
     margin-top: 15px;
     overflow-y: scroll;
-    height: 730px;
+    max-height: 771px;
     -webkit-overflow-scrolling: touch;
   }
   .twitter-timeline {
@@ -209,6 +276,7 @@
   }
   .new-tit {
     font-size: 18px;
+    min-height: 50px;
   }
   .col-news-txt > a,
   .new-tit > a {
@@ -258,7 +326,21 @@
   .news-area {
     margin-top: 15px;
   }
-  /* start 阴影 - shadow */
+
+  .nkn-news-video-cover-zh {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .video1-area,
+  .video2-area,
+  .video3-area {
+    position: relative;
+  }
+
+    /* start 阴影 - shadow */
   .twitter-area,
   .news-area,
   .new-img,

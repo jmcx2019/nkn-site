@@ -12,6 +12,7 @@
       <e-a></e-a>
       <news id="nkn-news-container"></news>
       <team id="nkn-team-container"></team>
+      <partners-and-alliance></partners-and-alliance>
       <!--<investor></investor>-->
       <slogan></slogan>
       <the-footer></the-footer>
@@ -35,11 +36,13 @@
   import TheFooter from './TheFooter'
   import NavBottom from './NavBottom'
   import VideoBanner from "./VideoBanner";
+  import PartnersAndAlliance from "./PartnersAndAlliance";
 
 	export default {
     name: "home",
     components: {
-        VideoBanner,
+      PartnersAndAlliance,
+      VideoBanner,
         NavBar,
       Banner,
       Introduction,

@@ -6,7 +6,7 @@
           <div class="warning-left">
             <div class="warning-text">
               <img class="warning-pic" src="./../../src/assets/warning/warning.png">
-              <p class="warning-p">{{ $t('navBottom.txt') }}</p>
+              <p class="warning-p" v-html="$t('navBottom.txt')"></p>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="navbar-bottom-xs hidden-lg hidden-md hidden-sm">
       <div class="warning-text-xs">
         <img class="warning-pic-xs" src="./../../src/assets/warning/warning.png">
-        <p class="warning-p-xs">{{ $t('navBottom.txt') }}</p>
+        <p class="warning-p-xs" v-html="$t('navBottom.txt')"></p>
       </div>
       <div>
         <div class="warning-bottom" @click="hideWarning">
@@ -48,7 +48,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
   .navbar-bottom {
     height: 90px;
     background-color: #65709D;
@@ -66,6 +66,7 @@
     position: relative;
     padding: 10px;
     color: white;
+    height: 60px;
   }
   .warning-pic {
     height: 30px;
@@ -102,6 +103,20 @@
     padding: 8px;
     font-size: 16px;
     text-align: left;
+  }
+
+  .warning-p {
+    position: absolute;
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    -webkit-transform: translateX(0) translateY(-50%);
+  }
+
+  .warning-p-xs > a,
+  .warning-p > a {
+    color: #69daff !important;
+    padding: 0 6px;
+    vertical-align: center;
   }
 
   .warning-right,
